@@ -1,421 +1,296 @@
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html{
-  scroll-behavior:smooth;
+body {
+  background: #050505;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
-  background:#050505;
-  color:#fff;
-  font-family:Arial,Helvetica,sans-serif;
-  overflow-x:hidden;
-}
+.home {
+  min-height: 100vh;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-/* HERO */
-
-.hero{
-  min-height:100vh;
-  width:100%;
-  position:relative;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  text-align:center;
-
-  background-image:url("Gemini_Generated_Image_s88ifys88ifys88i.png");
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
-}
-
-.dark-overlay{
-  position:absolute;
-  inset:0;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(0,0,0,.88),
-      rgba(0,0,0,.45),
-      rgba(0,0,0,.72)
-    );
-
-  z-index:1;
-}
-
-.dark-overlay::after{
-  content:"";
-  position:absolute;
-  inset:0;
+  padding: 35px 15px;
 
   background:
     radial-gradient(
-      circle at center,
-      rgba(255,40,0,.18),
-      transparent 48%
-    );
+      circle at 50% 35%,
+      rgba(255, 45, 15, 0.12),
+      transparent 42%
+    ),
+    #050505;
+}
+
+.container {
+  width: 100%;
+  max-width: 850px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
 }
 
 
-.hero-content{
-  position:relative;
-  z-index:2;
+/* THUMBNAIL */
 
-  width:95%;
-  max-width:1050px;
+.thumbnail-card {
+  width: 100%;
+  max-width: 850px;
 
-  padding:30px;
+  aspect-ratio: 16 / 9;
 
-  animation:heroIn 1s ease;
-}
+  position: relative;
 
+  overflow: hidden;
 
-.top-badge{
-  display:inline-block;
+  border-radius: 12px;
 
-  padding:10px 18px;
+  border: 2px solid #292929;
 
-  margin-bottom:24px;
-
-  border:1px solid #ff3b20;
-
-  background:rgba(255,30,0,.12);
-
-  color:#ff5a3d;
-
-  font-size:12px;
-  font-weight:800;
-
-  letter-spacing:3px;
+  background: #111;
 
   box-shadow:
-    0 0 20px rgba(255,40,0,.2);
+    0 0 0 1px rgba(255, 50, 20, 0.15),
+    0 15px 60px rgba(0, 0, 0, 0.8),
+    0 0 45px rgba(255, 40, 10, 0.12);
+}
+
+.thumbnail-card::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    180deg,
+    transparent 65%,
+    rgba(0, 0, 0, 0.25)
+  );
+
+  pointer-events: none;
+}
+
+.thumbnail-card img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+.thumbnail-card:hover img {
+  transform: scale(1.025);
 }
 
 
-h1{
-  font-size:clamp(45px,8vw,100px);
+/* COURSE INFO */
 
-  line-height:.9;
+.course-info {
+  width: 100%;
+  max-width: 700px;
 
-  font-weight:1000;
+  margin-top: 25px;
+}
 
-  letter-spacing:-3px;
+.course-badge {
+  display: inline-block;
+
+  padding: 9px 17px;
+
+  border: 1px solid #ff3c20;
+
+  border-radius: 4px;
+
+  background: rgba(255, 45, 20, 0.08);
+
+  color: #ff5339;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: clamp(30px, 5vw, 55px);
+
+  line-height: 0.95;
+
+  font-weight: 1000;
+
+  letter-spacing: -1px;
+}
+
+h1 span {
+  color: #ff3518;
 
   text-shadow:
-    4px 5px 0 #000,
-    0 0 30px rgba(0,0,0,.8);
+    0 0 20px rgba(255, 50, 20, 0.35);
 }
 
-h1 span{
-  color:#ff3015;
+.language {
+  margin-top: 15px;
 
-  text-shadow:
-    0 0 15px rgba(255,40,0,.8),
-    4px 5px 0 #000;
-}
+  color: #888;
 
+  font-size: 11px;
 
-.sub-title{
-  margin-top:25px;
+  letter-spacing: 2px;
 
-  font-size:20px;
-
-  font-weight:900;
-
-  letter-spacing:6px;
-
-  color:#fff;
+  font-weight: bold;
 }
 
 
-.price-box{
-  margin:25px auto;
+/* PRICE */
 
-  font-size:70px;
+.price {
+  margin-top: 18px;
 
-  font-weight:1000;
+  font-size: 48px;
 
-  text-shadow:0 0 25px rgba(255,255,255,.15);
+  font-weight: 1000;
+
+  color: white;
 }
 
-.price-box span{
-  color:#ff3a1d;
+.price small {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #666;
+
+  font-size: 9px;
+
+  letter-spacing: 2px;
 }
 
-.price-box small{
-  font-size:13px;
-  letter-spacing:3px;
-  color:#aaa;
-}
 
+/* BUY BUTTON */
 
-.buy-btn{
-  border:none;
+.buy-btn {
+  width: min(100%, 360px);
 
-  padding:20px 48px;
+  margin-top: 12px;
 
-  min-width:250px;
+  padding: 17px 30px;
+
+  border: 0;
+
+  border-radius: 5px;
 
   background:
     linear-gradient(
       90deg,
-      #ff1800,
+      #ff1d00,
       #ff5a00
     );
 
-  color:#fff;
+  color: white;
 
-  font-size:17px;
+  font-size: 17px;
 
-  font-weight:1000;
+  font-weight: 900;
 
-  letter-spacing:2px;
+  letter-spacing: 2px;
 
-  cursor:pointer;
-
-  border-radius:4px;
+  cursor: pointer;
 
   box-shadow:
-    0 0 20px rgba(255,40,0,.45),
-    0 8px 30px rgba(0,0,0,.5);
+    0 0 25px rgba(255, 45, 10, 0.35);
 
-  transition:.25s;
+  transition: all 0.25s ease;
 }
 
-.buy-btn b{
-  margin-left:12px;
-  font-size:22px;
+.buy-btn span {
+  margin-left: 12px;
+
+  font-size: 21px;
 }
 
-.buy-btn:hover{
-  transform:translateY(-4px) scale(1.03);
+.buy-btn:hover {
+  transform: translateY(-3px);
 
   box-shadow:
-    0 0 40px rgba(255,50,0,.75),
-    0 10px 35px rgba(0,0,0,.6);
+    0 0 40px rgba(255, 45, 10, 0.65);
+}
+
+.buy-btn:active {
+  transform: scale(0.98);
 }
 
 
-.secure{
-  margin-top:18px;
+/* SECURITY */
 
-  font-size:11px;
+.secure {
+  margin-top: 12px;
 
-  color:#aaa;
+  color: #555;
 
-  letter-spacing:1px;
-}
+  font-size: 10px;
 
-
-.scroll{
-  position:absolute;
-
-  bottom:22px;
-
-  left:50%;
-
-  transform:translateX(-50%);
-
-  z-index:2;
-
-  font-size:9px;
-
-  letter-spacing:3px;
-
-  color:#777;
-}
-
-
-/* INFO */
-
-.info{
-  padding:100px 7%;
-
-  text-align:center;
-
-  background:
-    radial-gradient(
-      circle at 50% 0%,
-      rgba(255,40,0,.1),
-      transparent 40%
-    ),
-    #070707;
-}
-
-
-.section-label{
-  color:#ff4428;
-
-  font-size:11px;
-
-  font-weight:bold;
-
-  letter-spacing:4px;
-}
-
-
-.info h2{
-  margin-top:12px;
-
-  font-size:42px;
-
-  font-weight:1000;
-}
-
-.info h2 span{
-  color:#ff3218;
-}
-
-
-.cards{
-  max-width:1100px;
-
-  margin:50px auto;
-
-  display:grid;
-
-  grid-template-columns:
-    repeat(3,1fr);
-
-  gap:20px;
-}
-
-
-.card{
-  padding:35px 25px;
-
-  min-height:220px;
-
-  background:
-    linear-gradient(
-      145deg,
-      #151515,
-      #090909
-    );
-
-  border:1px solid #242424;
-
-  transition:.3s;
-}
-
-
-.card:hover{
-  transform:translateY(-8px);
-
-  border-color:#ff3218;
-
-  box-shadow:
-    0 15px 40px rgba(255,40,0,.12);
-}
-
-
-.icon{
-  font-size:38px;
-
-  margin-bottom:20px;
-}
-
-
-.card h3{
-  font-size:14px;
-
-  margin-bottom:13px;
-
-  letter-spacing:1px;
-}
-
-
-.card p{
-  color:#888;
-
-  font-size:13px;
-
-  line-height:1.6;
-}
-
-
-.bottom-btn{
-  margin-top:10px;
-}
-
-
-/* FOOTER */
-
-footer{
-  padding:25px;
-
-  text-align:center;
-
-  color:#555;
-
-  font-size:11px;
-
-  border-top:1px solid #181818;
-}
-
-
-/* ANIMATION */
-
-@keyframes heroIn{
-
-  from{
-    opacity:0;
-    transform:translateY(30px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-
+  letter-spacing: 0.5px;
 }
 
 
 /* MOBILE */
 
-@media(max-width:700px){
+@media (max-width: 600px) {
 
-  .hero{
-    background-position:center;
+  .home {
+    padding: 25px 12px;
   }
 
-  h1{
-    font-size:45px;
-    letter-spacing:-2px;
+  .thumbnail-card {
+    border-radius: 8px;
+
+    border-width: 1px;
   }
 
-  .sub-title{
-    font-size:13px;
-    letter-spacing:3px;
+  .course-info {
+    margin-top: 20px;
   }
 
-  .price-box{
-    font-size:55px;
+  .course-badge {
+    font-size: 9px;
+
+    padding: 8px 12px;
+
+    letter-spacing: 1.5px;
   }
 
-  .cards{
-    grid-template-columns:1fr;
+  h1 {
+    font-size: 32px;
   }
 
-  .info{
-    padding:70px 5%;
+  .language {
+    font-size: 9px;
+
+    letter-spacing: 1px;
   }
 
-  .info h2{
-    font-size:32px;
+  .price {
+    font-size: 42px;
   }
 
-  .buy-btn{
-    width:100%;
-    max-width:330px;
+  .buy-btn {
+    font-size: 15px;
+
+    padding: 16px 25px;
   }
 
 }
