@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment — PRO AIM TRAINING</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="payment-page">
+
+<header class="navbar">
+  <div class="logo">🔥 PRO<span>AIM</span></div>
+  <a href="index.html" class="back">← BACK</a>
+</header>
+
+<main class="payment-container">
+
+  <div class="payment-card">
+
+    <div class="payment-top">
+      <div class="check-circle">✓</div>
+      <small>ORDER READY</small>
+      <h1>COMPLETE YOUR<br><span>PAYMENT</span></h1>
+      <p>Pay ₹99 using any UPI app.</p>
+    </div>
+
+    <div class="amount">
+      <small>PAYABLE AMOUNT</small>
+      <strong>₹99</strong>
+    </div>
+
+    <div class="qr-area">
+      <div class="qr-frame">
+        <img src="qr.png" alt="UPI QR Code">
+      </div>
+      <p>SCAN QR CODE TO PAY</p>
+    </div>
+
+    <div class="upi-box">
+      <small>UPI ID</small>
+
+      <!-- CHANGE THIS TO YOUR REAL UPI ID -->
+      <div class="upi-id" id="upiId">
+        YOURUPI@upi
+      </div>
+
+      <button class="copy-btn" onclick="copyUPI()">
+        📋 COPY UPI ID
+      </button>
+    </div>
+
+    <div class="steps">
+      <div><b>1</b> Scan the QR code</div>
+      <div><b>2</b> Pay exactly ₹99</div>
+      <div><b>3</b> Keep your payment screenshot</div>
+    </div>
+
+    <button class="paid-btn" onclick="paymentMessage()">
+      ✓ I HAVE PAID
+    </button>
+
+    <div id="message" class="payment-message"></div>
+
+    <p class="note">
+      ⚡ Course access is provided after payment verification.
+    </p>
+
+  </div>
+
+</main>
+
+<footer>
+  © 2026 PRO AIM TRAINING
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
