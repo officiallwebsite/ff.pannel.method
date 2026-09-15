@@ -951,3 +951,157 @@ h1 span {
   }
 
 }
+/* =========================
+   STUDENT REVIEWS
+   ========================= */
+
+.reviews-section{
+  padding:70px 20px 80px;
+  position:relative;
+}
+
+.reviews-container{
+  max-width:1150px;
+  margin:0 auto;
+}
+
+.reviews-heading{
+  text-align:center;
+  margin-bottom:38px;
+}
+
+.reviews-label{
+  display:inline-block;
+  font-size:.72rem;
+  font-weight:800;
+  letter-spacing:1.5px;
+  color:#f7971e;
+  background:rgba(247,151,30,.10);
+  border:1px solid rgba(247,151,30,.22);
+  padding:7px 14px;
+  border-radius:999px;
+  margin-bottom:12px;
+}
+
+.reviews-heading h2{
+  font-size:2.1rem;
+  font-weight:800;
+  margin:0;
+}
+
+.reviews-heading p{
+  margin:8px auto 0;
+  max-width:560px;
+  font-size:.92rem;
+  opacity:.58;
+  line-height:1.6;
+}
+
+.reviews-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.review-card{
+  background:var(--card-bg);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:24px;
+  box-shadow:var(--shadow);
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease,
+    border-color .3s ease;
+}
+
+.review-card:hover{
+  transform:translateY(-5px);
+  box-shadow:var(--shadow-hover);
+  border-color:rgba(247,151,30,.35);
+}
+
+.review-stars{
+  color:#f7971e;
+  font-size:1rem;
+  letter-spacing:2px;
+  margin-bottom:14px;
+}
+
+.review-text{
+  font-size:.9rem;
+  line-height:1.7;
+  opacity:.75;
+  margin:0 0 22px;
+}
+
+.review-user{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  padding-top:15px;
+  border-top:1px solid var(--border);
+}
+
+.review-avatar{
+  width:40px;
+  height:40px;
+  flex-shrink:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:linear-gradient(
+    135deg,
+    var(--primary),
+    #ffd200
+  );
+  color:#0b1a2f;
+  font-weight:800;
+}
+
+.review-user strong{
+  display:block;
+  font-size:.84rem;
+  font-weight:700;
+}
+
+.review-user span{
+  display:block;
+  margin-top:2px;
+  font-size:.7rem;
+  opacity:.45;
+}
+
+/* TABLET */
+
+@media(max-width:900px){
+
+  .reviews-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+/* MOBILE */
+
+@media(max-width:560px){
+
+  .reviews-section{
+    padding:50px 16px 60px;
+  }
+
+  .reviews-heading h2{
+    font-size:1.65rem;
+  }
+
+  .reviews-grid{
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+
+  .review-card{
+    padding:20px;
+  }
+
+}
