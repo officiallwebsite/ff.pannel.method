@@ -4,213 +4,268 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Secure Payment | Pro Course</title>
+  <title>Secure Payment • Free Fire Panel Course</title>
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="payment.css">
 </head>
 
-<body class="payment-body">
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
 
   <header class="payment-header">
 
-    <div class="payment-logo">
-      🔥 <span>PRO</span> COURSE
+    <div class="payment-brand">
+      FREE FIRE PANEL
     </div>
 
-    <a href="index.html" class="back-btn">
-      ← BACK
-    </a>
+    <div class="secure-label">
+      🔒 SECURE CHECKOUT
+    </div>
 
   </header>
 
 
-  <main class="payment-wrapper">
+  <!-- =========================
+       MAIN
+  ========================== -->
 
-    <div class="checkout-card">
+  <main class="payment-page">
 
-      <!-- TOP -->
-      <div class="checkout-top">
+    <div class="payment-container">
 
-        <div class="secure-icon">
-          🔒
-        </div>
 
-        <div class="checkout-label">
-          SECURE CHECKOUT
+      <!-- LEFT -->
+      <section class="checkout-card">
+
+        <div class="step-label">
+          STEP 1 OF 2
         </div>
 
         <h1>
-          COMPLETE YOUR
-          <span>PAYMENT</span>
+          Complete Your Order
         </h1>
 
-        <p>
-          You're just one step away from the course.
+        <p class="subtitle">
+          Review your course and continue to payment.
         </p>
 
-      </div>
 
-
-      <!-- PRICE -->
-      <div class="order-box">
-
-        <div>
-          <small>COURSE</small>
-
-          <strong>
-            4 HOURS COMPLETE COURSE
-          </strong>
-        </div>
-
-        <div class="order-price">
-          ₹249
-        </div>
-
-      </div>
-
-
-      <!-- QR -->
-      <div class="qr-section">
-
-        <div class="qr-title">
-          SCAN & PAY
-        </div>
-
-        <div class="qr-box">
-
-          <div class="qr-glow"></div>
+        <!-- PRODUCT -->
+        <div class="product-card">
 
           <img
-            src="qr.png"
-            alt="UPI Payment QR"
-          >
+            src="Gemini_Generated_Image_s88ifys88ifys88i.png"
+            alt="Free Fire Panel Course">
+
+          <div class="product-info">
+
+            <span class="product-tag">
+              COMPLETE COURSE
+            </span>
+
+            <h2>
+              Free Fire Panel Course
+            </h2>
+
+            <p>
+              4 Hours • Hindi • Beginner Friendly
+            </p>
+
+            <div class="product-price">
+              ₹249
+            </div>
+
+          </div>
 
         </div>
 
-        <div class="qr-hint">
-          Scan this QR using any UPI app
-        </div>
 
-        <div class="upi-apps">
-          Google Pay &nbsp; • &nbsp;
-          PhonePe &nbsp; • &nbsp;
-          Paytm &nbsp; • &nbsp;
-          BHIM
-        </div>
+        <!-- PAYMENT METHOD -->
+        <div class="payment-method">
 
-      </div>
+          <h3>
+            Select Payment Method
+          </h3>
 
+          <div class="method active">
 
-      <!-- UPI -->
-      <div class="upi-section">
+            <div class="method-left">
 
-        <div class="upi-label">
-          OR PAY USING UPI ID
-        </div>
+              <div class="method-icon">
+                UPI
+              </div>
 
-        <div class="upi-row">
+              <div>
+                <strong>UPI Payment</strong>
+                <span>Pay using any UPI app</span>
+              </div>
 
-          <!-- CHANGE YOUR UPI HERE -->
-          <div
-            class="upi-value"
-            id="upiId"
-          >
-fftopupsite@axl          </div>
+            </div>
 
-          <button
-            class="copy-button"
-            onclick="copyUPI()"
-          >
-            COPY
-          </button>
+            <div class="method-check">
+              ✓
+            </div>
+
+          </div>
 
         </div>
 
+
+        <!-- QR PAYMENT -->
+        <div class="qr-section">
+
+          <h3>
+            Scan & Pay
+          </h3>
+
+          <p>
+            Scan the QR code using your UPI app
+            and complete the payment of
+            <strong>₹249</strong>.
+          </p>
+
+
+          <div class="qr-box">
+
+            <img
+              src="upi-qr.png.jpeg"
+              alt="UPI QR Code">
+
+          </div>
+
+
+          <div class="upi-row">
+
+            <span>
+              UPI ID
+            </span>
+
+            <strong id="upiId">
+              fftopupsite@axl
+            </strong>
+
+            <button
+              type="button"
+              id="copyUpiBtn">
+              COPY
+            </button>
+
+          </div>
+
+
+          <div class="payment-note">
+            ⚠️ This is a demo checkout page.
+            Do not enter sensitive banking information.
+          </div>
+
+        </div>
+
+
+        <!-- PAID BUTTON -->
+        <button
+          class="paid-btn"
+          id="paidBtn"
+          type="button">
+
+          I HAVE PAID
+          <span>→</span>
+
+        </button>
+
+
+        <!-- DEMO MESSAGE -->
         <div
-          id="copyMessage"
-          class="copy-message"
-        ></div>
+          class="payment-message"
+          id="paymentMessage"
+          hidden>
+        </div>
 
-      </div>
+
+      </section>
 
 
-      <!-- STEPS -->
-      <div class="payment-steps">
+      <!-- RIGHT -->
+      <aside class="order-summary">
 
-        <div class="step">
+        <div class="summary-title">
+          ORDER SUMMARY
+        </div>
 
-          <div class="step-number">
-            1
-          </div>
 
-          <div>
-            <strong>SCAN QR</strong>
-            <p>Open your UPI app and scan.</p>
-          </div>
+        <div class="summary-item">
+
+          <span>
+            Course
+          </span>
+
+          <strong>
+            ₹249
+          </strong>
 
         </div>
 
 
-        <div class="step">
+        <div class="summary-item">
 
-          <div class="step-number">
-            2
-          </div>
+          <span>
+            Discount
+          </span>
 
-          <div>
-            <strong>PAY ₹249</strong>
-            <p>Pay exactly ₹249 to the UPI ID.</p>
-          </div>
+          <strong class="green">
+            ₹0
+          </strong>
+
+        </div>
+
+
+        <div class="summary-item">
+
+          <span>
+            Payment
+          </span>
+
+          <strong>
+            UPI
+          </strong>
 
         </div>
 
 
-        <div class="step">
+        <div class="summary-line"></div>
 
-          <div class="step-number">
-            3
-          </div>
 
-          <div>
-            <strong>CONFIRM PAYMENT</strong>
-            <p>Keep your payment screenshot.</p>
-          </div>
+        <div class="total-row">
+
+          <span>
+            Total
+          </span>
+
+          <strong>
+            ₹249
+          </strong>
 
         </div>
 
-      </div>
 
+        <div class="trust-box">
 
-      <!-- PAID -->
-      <button
-        class="paid-button"
-        onclick="paymentDone()"
-      >
-        ✓ &nbsp; I HAVE PAID
-      </button>
+          <div>🔒 Secure checkout</div>
+          <div>⚡ Instant access flow</div>
+          <div>✓ Demo payment system</div>
 
+        </div>
 
-      <div
-        id="paymentMessage"
-        class="payment-message"
-      ></div>
-
-
-      <div class="payment-note">
-        🔐 Your payment is processed through UPI.
-      </div>
+      </aside>
 
     </div>
 
   </main>
 
 
-  <footer class="payment-footer">
-    © 2026 PRO COURSE • Secure Checkout
-  </footer>
-
-
-  <script src="script.js"></script>
+  <script src="payment.js"></script>
 
 </body>
 </html>
