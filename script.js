@@ -33,6 +33,6 @@ function paymentDone() {
   message.style.display = "block";
 
   message.innerHTML =
-    "⚠️ Please complete the ₹99 payment first. After payment, keep your payment screenshot ready for verification.";
+    "⚠️ Please complete the ₹249 payment first. After payment, keep your payment screenshot ready for verification.";
 
 }
