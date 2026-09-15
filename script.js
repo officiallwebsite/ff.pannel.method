@@ -2,118 +2,40 @@
    THEME SWITCHER
 ========================= */
 
-const lightTheme =
-  document.getElementById("lightTheme");
+const lightTheme = document.getElementById("lightTheme");
+const darkTheme = document.getElementById("darkTheme");
 
-const darkTheme =
-  document.getElementById("darkTheme");
+function applyTheme(theme) {
+  const isDark = theme === "dark";
 
+  document.documentElement.classList.toggle("dark", isDark);
 
-function applyTheme(theme){
-
-  const isDark =
-    theme === "dark";
-
-
-  document.documentElement
-    .classList
-    .toggle("dark", isDark);
-
-
-  if(lightTheme){
-
-    lightTheme.classList.toggle(
-      "active",
-      !isDark
-    );
-
+  if (lightTheme) {
+    lightTheme.classList.toggle("active", !isDark);
   }
 
-
-  if(darkTheme){
-
-    darkTheme.classList.toggle(
-      "active",
-      isDark
-    );
-
+  if (darkTheme) {
+    darkTheme.classList.toggle("active", isDark);
   }
 
-
-  try{
-
-    localStorage.setItem(
-      "ff_theme",
-      isDark ? "dark" : "light"
-    );
-
-  }catch(error){
-
-    console.log(
-      "Theme preference could not be saved."
-    );
-
-  }
-
+  localStorage.setItem("ff_theme", isDark ? "dark" : "light");
 }
 
-
-/* =========================
-   LOAD SAVED THEME
-========================= */
-
-let savedTheme = "light";
-
-
-try{
-
-  savedTheme =
-    localStorage.getItem("ff_theme")
-    || "light";
-
-}catch(error){
-
-  savedTheme = "light";
-
-}
-
+const savedTheme =
+  localStorage.getItem("ff_theme") || "light";
 
 applyTheme(savedTheme);
 
-
-/* =========================
-   LIGHT BUTTON
-========================= */
-
-if(lightTheme){
-
-  lightTheme.addEventListener(
-    "click",
-    function(){
-
-      applyTheme("light");
-
-    }
-  );
-
+if (lightTheme) {
+  lightTheme.addEventListener("click", function () {
+    applyTheme("light");
+  });
 }
 
-
-/* =========================
-   DARK BUTTON
-========================= */
-
-if(darkTheme){
-
-  darkTheme.addEventListener(
-    "click",
-    function(){
-
-      applyTheme("dark");
-
-    }
-  );
-
+if (darkTheme) {
+  darkTheme.addEventListener("click", function () {
+    applyTheme("dark");
+  });
 }
 
 
@@ -121,10 +43,6 @@ if(darkTheme){
    BUY NOW
 ========================= */
 
-function buyNow(){
-
-  alert(
-    "Course demo: BUY NOW clicked."
-  );
-
+function buyNow() {
+  window.location.href = "payment.html";
 }
