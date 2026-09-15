@@ -46,3 +46,57 @@ if (darkTheme) {
 function buyNow() {
   window.location.href = "payment.html";
 }
+/* =========================
+   FAQ ACCORDION
+========================= */
+
+const faqQuestions =
+  document.querySelectorAll(".faq-question");
+
+faqQuestions.forEach(function(question){
+
+  question.addEventListener("click", function(){
+
+    const item =
+      question.parentElement;
+
+    const answer =
+      item.querySelector(".faq-answer");
+
+
+    /* Close other FAQs */
+
+    document.querySelectorAll(".faq-item").forEach(function(other){
+
+      if(other !== item){
+
+        other.classList.remove("open");
+
+        const otherAnswer =
+          other.querySelector(".faq-answer");
+
+        otherAnswer.style.maxHeight = null;
+
+      }
+
+    });
+
+
+    /* Toggle current */
+
+    item.classList.toggle("open");
+
+    if(item.classList.contains("open")){
+
+      answer.style.maxHeight =
+        answer.scrollHeight + "px";
+
+    }else{
+
+      answer.style.maxHeight = null;
+
+    }
+
+  });
+
+});
