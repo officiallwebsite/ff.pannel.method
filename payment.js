@@ -4,83 +4,49 @@ const copyBtn =
 const paidBtn =
   document.getElementById("paidBtn");
 
-const utrSection =
-  document.getElementById("utrSection");
-
-const submitBtn =
-  document.getElementById("submitBtn");
-
-const utrInput =
-  document.getElementById("utrInput");
-
-const error =
-  document.getElementById("error");
-
-const success =
-  document.getElementById("success");
+const paymentError =
+  document.getElementById("paymentError");
 
 const upiId =
   document.getElementById("upiId");
 
 
-/* COPY UPI */
+/* =========================
+   COPY UPI ID
+========================= */
 
 copyBtn.addEventListener("click", async function(){
 
+  const text =
+    upiId.textContent.trim();
+
   try{
 
-    await navigator.clipboard.writeText(
-      upiId.textContent.trim()
-    );
+    await navigator.clipboard.writeText(text);
 
     copyBtn.textContent = "COPIED";
 
     setTimeout(function(){
+
       copyBtn.textContent = "COPY";
+
     },1500);
 
-  }catch(e){
+  }catch(error){
 
-    alert(
-      "UPI ID: " +
-      upiId.textContent.trim()
-    );
+    alert("UPI ID: " + text);
 
   }
 
 });
 
 
-/* I HAVE PAID */
+/* =========================
+   I HAVE PAID
+========================= */
 
 paidBtn.addEventListener("click", function(){
 
-  utrSection.classList.remove("hidden");
-
-  paidBtn.classList.add("hidden");
-
-});
-
-
-/* SUBMIT UTR */
-
-submitBtn.addEventListener("click", function(){
-
-  const utr =
-    utrInput.value.trim();
-
-  if(utr.length < 6){
-
-    error.classList.remove("hidden");
-
-    return;
-
-  }
-
-  error.classList.add("hidden");
-
-  utrSection.classList.add("hidden");
-
-  success.classList.remove("hidden");
+  paymentError.classList.add("show");
 
 });
