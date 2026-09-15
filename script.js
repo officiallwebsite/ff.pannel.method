@@ -100,3 +100,136 @@ faqQuestions.forEach(function(question){
   });
 
 });
+/* =========================
+   DEMO ACTIVITY POPUPS
+========================= */
+
+const activityPopup =
+  document.getElementById("activityPopup");
+
+const activityText =
+  document.getElementById("activityText");
+
+const activityIcon =
+  document.getElementById("activityIcon");
+
+const activityClose =
+  document.getElementById("activityClose");
+
+
+const demoActivities = [
+
+  {
+    icon: "🎮",
+    text: "Demon Gaming from Delhi just purchased this course"
+  },
+
+  {
+    icon: "🔥",
+    text: "Apex from Bihar just purchased this course"
+  },
+
+  {
+    icon: "⚡",
+    text: "Aryan from Haryana just purchased this course"
+  },
+
+  {
+    icon: "🎯",
+    text: "Shadow FF from Punjab just purchased this course"
+  },
+
+  {
+    icon: "👑",
+    text: "Legend Gaming from Rajasthan just purchased this course"
+  },
+
+  {
+    icon: "🚀",
+    text: "Dark X Gaming from Uttar Pradesh just purchased this course"
+  },
+
+  {
+    icon: "💀",
+    text: "Raistar Fan from Delhi just purchased this course"
+  },
+
+  {
+    icon: "🎮",
+    text: "Dev Gaming from Haryana just purchased this course"
+  }
+
+];
+
+
+let activityIndex = 0;
+let activityTimer;
+
+
+function showActivity(){
+
+  if(!activityPopup) return;
+
+  const activity =
+    demoActivities[activityIndex];
+
+  activityIcon.textContent =
+    activity.icon;
+
+  activityText.textContent =
+    activity.text;
+
+
+  activityPopup.classList.add("show");
+
+
+  clearTimeout(activityTimer);
+
+  activityTimer =
+    setTimeout(function(){
+
+      activityPopup.classList.remove("show");
+
+      setTimeout(function(){
+
+        activityIndex++;
+
+        if(
+          activityIndex >=
+          demoActivities.length
+        ){
+          activityIndex = 0;
+        }
+
+        showActivity();
+
+      },500);
+
+    },4000);
+
+}
+
+
+if(activityPopup){
+
+  setTimeout(function(){
+    showActivity();
+  },1500);
+
+}
+
+
+if(activityClose){
+
+  activityClose.addEventListener(
+    "click",
+    function(){
+
+      activityPopup.classList.remove("show");
+
+      clearTimeout(activityTimer);
+
+    }
+  );
+
+}
