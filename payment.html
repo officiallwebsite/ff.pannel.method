@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Payment</title>
+
+  <title>Complete Payment</title>
+
   <link rel="stylesheet" href="payment.css">
 </head>
 
@@ -13,71 +15,69 @@
 
     <div class="payment-card">
 
+      <div class="top-icon">💳</div>
+
       <h1>Complete Payment</h1>
 
-      <p class="sub">
+      <p class="subtitle">
         Pay ₹249 using UPI
       </p>
 
-      <div class="amount">₹249</div>
+      <div class="amount">
+        ₹249
+      </div>
 
-      <div class="upi-title">UPI ID</div>
+      <div class="upi-label">
+        UPI ID
+      </div>
 
       <div class="upi-box">
-        <span id="upiId">fftopupsite@axl</span>
-        <button id="copyBtn">COPY</button>
+
+        <span id="upiId">
+          fftopupsite@axl
+        </span>
+
+        <button id="copyBtn">
+          COPY
+        </button>
+
+      </div>
+
+      <div class="qr-title">
+        Scan & Pay
       </div>
 
       <div class="qr-box">
-        <img src="upi-qr.png.jpeg" alt="UPI QR">
+
+        <img
+          src="upi-qr.png.jpeg"
+          alt="UPI QR Code">
+
       </div>
 
       <p class="scan-text">
-        Scan QR code with any UPI app
+        Scan the QR code using any UPI app
       </p>
 
-      <button class="paid-btn" id="paidBtn">
+      <button
+        class="paid-btn"
+        id="paidBtn">
+
         I HAVE PAID
+        <span>→</span>
+
       </button>
 
-      <div class="utr-section hidden" id="utrSection">
+      <div
+        class="payment-error"
+        id="paymentError">
 
-        <h2>Enter UTR Number</h2>
-
-        <p>
-          Enter your UPI transaction / UTR number
-        </p>
-
-        <input
-          type="text"
-          id="utrInput"
-          placeholder="Enter UTR number"
-        >
-
-        <button class="submit-btn" id="submitBtn">
-          SUBMIT
-        </button>
-
-        <div class="error hidden" id="error">
-          Please enter a valid UTR number.
-        </div>
+        ❌ Please complete payment first.
 
       </div>
 
-      <div class="success hidden" id="success">
-
-        <div class="success-icon">✓</div>
-
-        <h2>Payment Submitted</h2>
-
-        <p>
-          Your payment details have been submitted successfully.
-        </p>
-
-      </div>
-
-      <a href="index.html" class="back">
-        ← Back
+      <a href="index.html" class="back-btn">
+        ← Back to Course
       </a>
 
     </div>
