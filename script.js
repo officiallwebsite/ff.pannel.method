@@ -1,38 +1,130 @@
-function buyNow() {
-  window.location.href = "payment.html";
+/* =========================
+   THEME SWITCHER
+========================= */
+
+const lightTheme =
+  document.getElementById("lightTheme");
+
+const darkTheme =
+  document.getElementById("darkTheme");
+
+
+function applyTheme(theme){
+
+  const isDark =
+    theme === "dark";
+
+
+  document.documentElement
+    .classList
+    .toggle("dark", isDark);
+
+
+  if(lightTheme){
+
+    lightTheme.classList.toggle(
+      "active",
+      !isDark
+    );
+
+  }
+
+
+  if(darkTheme){
+
+    darkTheme.classList.toggle(
+      "active",
+      isDark
+    );
+
+  }
+
+
+  try{
+
+    localStorage.setItem(
+      "ff_theme",
+      isDark ? "dark" : "light"
+    );
+
+  }catch(error){
+
+    console.log(
+      "Theme preference could not be saved."
+    );
+
+  }
+
 }
 
 
-function copyUPI() {
+/* =========================
+   LOAD SAVED THEME
+========================= */
 
-  const upi = document
-    .getElementById("upiId")
-    .innerText
-    .trim();
+let savedTheme = "light";
 
-  navigator.clipboard.writeText(upi);
 
-  const message =
-    document.getElementById("copyMessage");
+try{
 
-  message.innerText = "✓ UPI ID COPIED";
+  savedTheme =
+    localStorage.getItem("ff_theme")
+    || "light";
 
-  setTimeout(function() {
+}catch(error){
 
-    message.innerText = "";
+  savedTheme = "light";
 
-  }, 2000);
 }
 
 
-function paymentDone() {
+applyTheme(savedTheme);
 
-  const message =
-    document.getElementById("paymentMessage");
 
-  message.style.display = "block";
+/* =========================
+   LIGHT BUTTON
+========================= */
 
-  message.innerHTML =
-    "⚠️ Please complete the ₹249 payment first. After payment, keep your payment screenshot ready for verification.";
+if(lightTheme){
+
+  lightTheme.addEventListener(
+    "click",
+    function(){
+
+      applyTheme("light");
+
+    }
+  );
+
+}
+
+
+/* =========================
+   DARK BUTTON
+========================= */
+
+if(darkTheme){
+
+  darkTheme.addEventListener(
+    "click",
+    function(){
+
+      applyTheme("dark");
+
+    }
+  );
+
+}
+
+
+/* =========================
+   BUY NOW
+========================= */
+
+function buyNow(){
+
+  alert(
+    "Course demo: BUY NOW clicked."
+  );
 
 }
