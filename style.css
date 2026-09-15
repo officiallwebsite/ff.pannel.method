@@ -1234,3 +1234,331 @@ html.dark .learn-card{
   }
 
 }
+/* =========================
+   HOW IT WORKS
+========================= */
+
+.how-section{
+  padding:70px 20px 30px;
+}
+
+.how-grid{
+  width:min(1100px,100%);
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.how-card{
+  position:relative;
+
+  padding:25px 20px;
+
+  background:var(--card-bg);
+
+  border:1px solid var(--border);
+  border-radius:20px;
+
+  box-shadow:
+    0 10px 30px rgba(15,23,42,.05);
+
+  transition:.22s;
+}
+
+.how-card:hover{
+  transform:translateY(-5px);
+
+  border-color:
+    rgba(255,49,49,.25);
+}
+
+.how-number{
+  position:absolute;
+
+  top:15px;
+  right:15px;
+
+  color:var(--accent);
+
+  font-size:.65rem;
+  font-weight:1000;
+}
+
+.how-icon{
+  width:48px;
+  height:48px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:14px;
+
+  background:
+    rgba(255,49,49,.09);
+
+  font-size:1.25rem;
+
+  margin-bottom:18px;
+}
+
+.how-card h3{
+  font-size:1rem;
+  font-weight:1000;
+}
+
+.how-card p{
+  margin-top:8px;
+
+  color:var(--muted);
+
+  font-size:.78rem;
+
+  line-height:1.65;
+}
+
+
+/* =========================
+   FAQ
+========================= */
+
+.faq-section{
+  padding:70px 20px 40px;
+}
+
+.faq-wrap{
+  width:min(850px,100%);
+  margin:auto;
+}
+
+.faq-item{
+  background:var(--card-bg);
+
+  border:1px solid var(--border);
+
+  border-radius:15px;
+
+  margin-bottom:12px;
+
+  overflow:hidden;
+
+  transition:border-color .2s ease;
+}
+
+.faq-item.open{
+  border-color:
+    rgba(255,49,49,.25);
+}
+
+.faq-question{
+  width:100%;
+
+  border:0;
+
+  background:transparent;
+
+  color:var(--text);
+
+  padding:20px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  text-align:left;
+
+  font-size:.9rem;
+  font-weight:900;
+
+  cursor:pointer;
+}
+
+.faq-plus{
+  width:28px;
+  height:28px;
+
+  flex:0 0 28px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:8px;
+
+  background:
+    rgba(255,49,49,.09);
+
+  color:var(--accent);
+
+  font-size:1.1rem;
+
+  transition:.25s;
+}
+
+.faq-item.open .faq-plus{
+  transform:rotate(45deg);
+}
+
+.faq-answer{
+  max-height:0;
+
+  overflow:hidden;
+
+  transition:
+    max-height .3s ease,
+    padding .3s ease;
+}
+
+.faq-answer p{
+  padding:
+    0 20px 20px;
+
+  color:var(--muted);
+
+  font-size:.82rem;
+
+  line-height:1.7;
+}
+
+
+/* =========================
+   MOBILE BUY BAR
+========================= */
+
+.mobile-buy-bar{
+  display:none;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+  .how-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:600px){
+
+  .how-section{
+    padding:50px 15px 25px;
+  }
+
+  .how-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+  }
+
+  .how-card{
+    padding:17px;
+  }
+
+  .how-card h3{
+    font-size:.84rem;
+  }
+
+  .how-card p{
+    font-size:.7rem;
+  }
+
+  .faq-section{
+    padding:50px 15px 100px;
+  }
+
+  .faq-question{
+    padding:17px;
+    font-size:.82rem;
+  }
+
+  .faq-answer p{
+    padding:
+      0 17px 17px;
+
+    font-size:.75rem;
+  }
+
+
+  /* STICKY BAR */
+
+  .mobile-buy-bar{
+    position:fixed;
+
+    left:10px;
+    right:10px;
+    bottom:10px;
+
+    z-index:9999;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    gap:12px;
+
+    padding:10px 11px 10px 15px;
+
+    background:var(--card-bg);
+
+    border:1px solid var(--border);
+
+    border-radius:15px;
+
+    box-shadow:
+      0 10px 35px rgba(0,0,0,.18);
+  }
+
+  .mobile-price small{
+    display:block;
+
+    color:var(--muted);
+
+    font-size:.57rem;
+
+    font-weight:800;
+  }
+
+  .mobile-price strong{
+    display:block;
+
+    margin-top:2px;
+
+    font-size:1.3rem;
+
+    font-weight:1000;
+  }
+
+  .mobile-buy-bar button{
+    border:0;
+
+    padding:13px 22px;
+
+    border-radius:11px;
+
+    background:
+      linear-gradient(
+        135deg,
+        var(--accent),
+        var(--accent-dark)
+      );
+
+    color:#fff;
+
+    font-size:.8rem;
+
+    font-weight:1000;
+
+    cursor:pointer;
+  }
+
+  .mobile-buy-bar button span{
+    margin-left:5px;
+  }
+
+}
